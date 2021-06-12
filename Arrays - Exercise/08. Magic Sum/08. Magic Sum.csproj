@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_01.___Train</RootNamespace>
+    <RootNamespace>_08._Magic_Sum</RootNamespace>
   </PropertyGroup>
 
 </Project>

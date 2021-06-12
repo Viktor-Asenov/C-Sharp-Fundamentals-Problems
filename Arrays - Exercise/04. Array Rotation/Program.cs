@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace _04._Array_Rotation
@@ -8,26 +7,26 @@ namespace _04._Array_Rotation
     {
         static void Main(string[] args)
         {
-            List<int> input = Console.ReadLine().Split().Select(int.Parse).ToList();
-            int n = int.Parse(Console.ReadLine());
+            int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int n = int.Parse(Console.ReadLine());            
 
-            List<int> result = new List<int>(input);
-
-            for (int i = 0; i < input.Count; i++)
+            for (int i = 0; i < n; i++)
             {
-                if (i == n)
+                int firstElement = input[0];
+
+                int[] temp = new int[input.Length];
+
+                for (int j = 1; j < input.Length; j++)
                 {
-                    break;
+                    temp[j - 1] = input[j];
+                    temp[temp.Length - 1] = firstElement;
                 }
 
-                result.Remove(input[i]);
-                result.Add(input[i]);
+                input = temp;
             }
 
-            for (int i = 0; i < result.Count; i++)
-            {
-                Console.Write($"{result[i]} ");
-            }
+            Console.WriteLine(String.Join(' ', input));
+
         }
     }
 }
